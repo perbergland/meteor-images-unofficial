@@ -1,8 +1,8 @@
 FROM --platform=linux/amd64 alpine:3.19 AS baseimage
 
-ENV NODE_VERSION=14.21.4
-ENV NODE_URL="https://static.meteor.com/dev-bundle-node-os/unofficial-builds/v${NODE_VERSION}/node-v${NODE_VERSION}-linux-x64.tar.gz"
-ENV DIR_NODE=/usr/local
+ARG NODE_VERSION=14.21.4
+ARG NODE_URL="https://static.meteor.com/dev-bundle-node-os/unofficial-builds/v${NODE_VERSION}/node-v${NODE_VERSION}-linux-x64.tar.gz"
+ARG DIR_NODE=/usr/local
 
 # Because the nodejs tarball is built for normal linux, not Alpine’s MUSLC
 RUN apk add --no-cache libstdc++ \
